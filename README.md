@@ -1,6 +1,6 @@
 # smi-avr
 Based on [Sternhelden/Arduino-SMI-Library](https://github.com/Sternhelden/Arduino-SMI-Library)<br>
-SMI read and write functions for 8-bit AVR microcontrollers (ATtiny13).<br>
+SMI (Serial Management Interface) read and write functions for 8-bit AVR microcontrollers (ATtiny13).<br>
 DDR and PORT registers must be specified in smi.h (SMI_PORTDDR and SMI_PORT) according to the location of SMI pins.
 
 <b>void SMIinit(uint8_t clockPin, uint8_t dataPin)</b> - initializes pin variables<br>
