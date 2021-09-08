@@ -7,7 +7,7 @@
 #define F_CPU 9600000L
 #define SMI_CLOCK_PIN 3
 #define SMI_DATA_PIN 4
-#define SMI_ADDR 0x02
+#define SMI_ADDR 0x01
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -79,8 +79,8 @@ void enableSFP(const uint8_t n){ //n - ftp interface address
 	writeMultiChip(phyAddress, reg, regvalue);
 }
 
-void __attribute__ ((__noinline__, __optimize__("Os"))) delay_250ms() {
-	_delay_ms(250);
+void __attribute__ ((__noinline__, __optimize__("Os"))) delay_300ms() {
+	_delay_ms(300);
 }
 
 int main(void)
@@ -88,7 +88,7 @@ int main(void)
 	SMI_PORT = 0x14;
 	SMI_PORTDDR |= 0x1C;
 	SMIinit(SMI_CLOCK_PIN, SMI_DATA_PIN);
-	delay_250ms();
+	delay_300ms();
 	enableSFP(0);
 	enableSFP(1);
 	enableSFP(2);
@@ -99,9 +99,8 @@ int main(void)
 	while (1)
 	{
 		SMI_PORT ^= (1<<2);
-		delay_250ms();
-		delay_250ms();
-		delay_250ms();
-		delay_250ms();
+		delay_300ms();
+		delay_300ms();
+		delay_300ms();
 	}
 }
