@@ -48,7 +48,7 @@ static void smiPinWrite (const uint8_t pin, const char state){
 }
 
 static char smiPinRead(uint8_t pin){
-	return ((SMI_PORT>>pin) & 1);
+	return ((SMI_PIN>>pin) & 1);
 }
 
 void SMIinit(uint8_t clockPin, uint8_t dataPin) {

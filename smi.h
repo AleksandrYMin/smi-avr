@@ -4,6 +4,7 @@
 
 #define SMI_PORTDDR DDRB
 #define SMI_PORT PORTB
+#define SMI_PIN PINB
 
 void SMIinit(uint8_t clockPin, uint8_t dataPin);
 
